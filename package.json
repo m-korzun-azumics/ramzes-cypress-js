@@ -1,0 +1,24 @@
+{
+  "name": "ramzes-cypress-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open --e2e --browser chrome",
+    "test-chrome": "cypress run --browser chrome --spec cypress/e2e/1-getting-started/*.cy.js",
+    "test-firefox": "cypress run --browser firefox",
+    "test": "cypress run --spec cypress/e2e/1-getting-started/*.cy.js"
+  },
+  "keywords": [
+    "cypress",
+    "javascript",
+    "docker",
+    "testing"
+  ],
+  "author": "QS",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "cypress-mochawesome-reporter": "^3.2.2"
+  }
+}
