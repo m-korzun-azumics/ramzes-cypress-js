@@ -10,9 +10,19 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Build docker and run tests
         uses: cypress-io/github-action@v4
         timeout-minutes: 10
         with:
           build: "docker build -t ramzes-cypress-js ."
-          start: npm run test-chrome
+          # start: npm run test-chrome
+          browser: chrome
+          spec: cypress/e2e/1-getting-started/*.cy.js
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: reports\html\

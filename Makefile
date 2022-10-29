@@ -1,6 +1,6 @@
 #Command 'build' will build your container for run testing in container mode
 build:
-@docker build -t ramzes-cypress-js .
+	@docker build -t ramzes-cypress-js .
 # @docker run -it	--name="ramzes-cypress-js" \
 # # 	--mount type=bind,source="$(pwd)"/ramzes-cypress-js,target=/app/ramzes-cypress-js 
 # 	@docker run -p 3000:3000 -v $(PWD)/cypress/:ramzes-cypress-js/cypress/ --rm -it ramzes-cypress-js
